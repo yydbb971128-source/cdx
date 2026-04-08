@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>申洲科技 — 首页</title>
+  <link rel="stylesheet" href="css/m-index.css" />
+</head>
+<body>
+
+<!-- NAV（固定在每屏左上角） -->
+<nav class="m-nav">
+  <a href="index.html" class="m-nav-logo">
+    <img src="../images/logo.png" alt="申洲科技" />
+  </a>
+</nav>
+
+<!-- 汉堡按钮 -->
+<div class="m-hamburger" id="mHamburger"><span></span><span></span><span></span></div>
+
+<!-- 侧边抽屉菜单 -->
+<div class="m-drawer-mask" id="mDrawerMask"></div>
+<div class="m-drawer" id="mDrawer">
+  <a href="index.html" class="m-drawer-item active">首页</a>
+  <a href="business.html" class="m-drawer-item">主营业务</a>
+  <a href="projects.html" class="m-drawer-item">项目案例</a>
+  <a href="news.html" class="m-drawer-item">行业资讯</a>
+  <a href="about.html" class="m-drawer-item">关于我们</a>
+</div>
+
+<!-- 底部翻页箭头 -->
+<div class="m-arrow" id="mArrow">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+
+<!-- 右侧页码指示器 -->
+<div class="m-dots" id="mDots">
+  <span class="m-dot active"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+</div>
+
+<!-- ══════════ 全屏滑动容器 ══════════ -->
+<div class="m-pages" id="mPages">
+
+  <!-- PAGE 1: Hero -->
+  <section class="m-page m-hero">
+    <img class="m-hero-bg" src="../images/hero-banner.png" alt="" />
+    <div class="m-hero-content">
+      <h1>懂您所需<br>做您所想</h1>
+      <p>让科技助力创意及每一位用户</p>
+    </div>
+  </section>
+
+  <!-- PAGE 2: 主营业务 -->
+  <section class="m-page m-biz">
+    <div class="m-page-inner">
+      <div class="m-sec-header">
+        <div class="m-sec-title">聚焦创新技术的<br>研发与应用</div>
+        <div class="m-sec-en">OUR BUSINESS</div>
+      </div>
+      <div class="m-biz-scroll">
+        <a href="business.html#xtjc" class="m-biz-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&auto=format" alt="系统集成" loading="lazy" />
+          <span>系统集成</span>
+        </a>
+        <a href="business.html#rjpt" class="m-biz-card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop&auto=format" alt="软件平台开发" loading="lazy" />
+          <span>软件平台开发</span>
+        </a>
+        <a href="business.html#sjfx" class="m-biz-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format" alt="数据分析应用" loading="lazy" />
+          <span>数据分析应用</span>
+        </a>
+        <a href="business.html#swsz" class="m-biz-card">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&auto=format" alt="三维数字服务" loading="lazy" />
+          <span>三维数字服务</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: 持续为客户创造价值 -->
+  <section class="m-page m-val">
+    <div class="m-page-inner">
+      <div class="m-sec-header">
+        <div class="m-sec-title">持续为客户创造价值</div>
+        <div class="m-sec-en">THE INDUSTRY FIELD</div>
+      </div>
+      <div class="m-val-grid">
+        <a href="../projects.html#zhengfa" class="m-val-card">政法委</a>
+        <a href="../projects.html#fayuan" class="m-val-card">法院</a>
+        <a href="../projects.html#gongan" class="m-val-card">公安</a>
+        <a href="../projects.html#sifa" class="m-val-card">司法</a>
+        <a href="../projects.html#dijing" class="m-val-card">低空经济</a>
+        <a href="../projects.html" class="m-val-card m-val-active">了解更多 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 4: 我们的愿景 -->
+  <section class="m-page m-vision">
+    <div class="m-page-inner">
+      <div class="m-sec-header" style="text-align:left">
+        <div class="m-sec-title">我们的愿景</div>
+      </div>
+      <div class="m-vision-photo">
+        <img src="../images/about-building.png" alt="关于我们" />
+      </div>
+      <div class="m-vision-blue">
+        <span class="m-vision-wm">VISION</span>
+        <h2>成为国际一流<br>数字化服务商</h2>
+        <a href="../about.html" class="m-vision-btn">了解详情 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 5: Footer -->
+  <section class="m-page m-page-footer">
+    <footer class="m-footer">
+      <p class="m-footer-label">咨询电话</p>
+      <p class="m-footer-phone">028-85120989</p>
+      <p class="m-footer-label">公司地址</p>
+      <p class="m-footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
+      <p class="m-footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
+    </footer>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var pages = document.getElementById('mPages');
+  var dots  = document.querySelectorAll('.m-dot');
+  var arrow = document.getElementById('mArrow');
+  var total = dots.length;
+  var cur   = 0;
+
+  function goTo(i) {
+    if (i < 0 || i >= total) return;
+    cur = i;
+    pages.style.transform = 'translateY(-' + (cur * 100) + 'vh)';
+    dots.forEach(function(d, idx) { d.classList.toggle('active', idx === cur); });
+    arrow.style.opacity = cur === total - 1 ? '0' : '1';
+  }
+
+  arrow.addEventListener('click', function() { goTo(cur + 1); });
+
+  var startY = 0, moved = false;
+  pages.addEventListener('touchstart', function(e) {
+    startY = e.touches[0].clientY;
+    moved = false;
+  }, { passive: true });
+  pages.addEventListener('touchmove', function(e) {
+    moved = true;
+  }, { passive: true });
+  pages.addEventListener('touchend', function(e) {
+    if (!moved) return;
+    var dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dy) > 50) {
+      goTo(cur + (dy < 0 ? 1 : -1));
+    }
+  });
+
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function() { goTo(i); });
+  });
+
+  // 汉堡菜单
+  var btn    = document.getElementById('mHamburger');
+  var drawer = document.getElementById('mDrawer');
+  var mask   = document.getElementById('mDrawerMask');
+  function toggle() {
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+    mask.classList.toggle('open');
+  }
+  btn.addEventListener('click', toggle);
+  mask.addEventListener('click', toggle);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+/* ================================================================
+   主营业务页 Hero（全屏背景图）
+================================================================ */
+.biz-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.biz-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.biz-hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.biz-hero h1 {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+.biz-hero p {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.9;
+  max-width: 520px;
+}
+
+/* ================================================================
+   系统集成：列表区
+================================================================ */
+.biz-list-section {
+  padding: 72px 0 40px;
+  background: #fff;
+}
+
+/* Tab 导航（锚点） */
+.biz-list-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 52px;
+}
+.biz-list-tab {
+  display: block;
+  padding: 12px 24px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: color .2s;
+  white-space: nowrap;
+}
+.biz-list-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transition: transform .22s;
+}
+.biz-list-tab.active,
+.biz-list-tab:hover { color: var(--blue); }
+.biz-list-tab.active::after { transform: scaleX(1); }
+
+/* 每行业务条目（图左文右） */
+.biz-item {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.biz-item:last-child { border-bottom: none; }
+
+.biz-item-img {
+  flex: 0 0 44%;
+  height: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.biz-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+.biz-item:hover .biz-item-img img { transform: scale(1.05); }
+
+.biz-item-body { flex: 1; }
+
+.biz-item-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+.biz-item-desc {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+/* 特性点阵（圆点 + 文字，2~3列） */
+.biz-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px 28px;
+  margin-top: 16px;
+}
+.biz-feat {
+  font-size: 13px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.biz-feat::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+/* 旧版 tag 样式保留兼容 */
+.biz-item-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.biz-tag {
+  font-size: 12px;
+  color: var(--blue);
+  border: 1px solid rgba(26,94,232,.25);
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: #f0f5ff;
+}
+
+/* ================================================================
+   软件平台开发（dark banner）
+================================================================ */
+.biz-dark-banner {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.biz-dark-banner > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.biz-dark-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 14, 30, .72);
+}
+.biz-dark-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.biz-dark-left h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.biz-dark-left .en {
+  font-size: 12px;
+  color: rgba(255,255,255,.4);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.biz-dark-left p {
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.9;
+  max-width: 420px;
+  margin-bottom: 24px;
+}
+.biz-dark-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.5);
+  padding: 11px 26px;
+  border-radius: 3px;
+  font-size: 14px;
+  transition: background .22s, gap .2s;
+}
+.biz-dark-btn:hover { background: rgba(255,255,255,.10); gap: 14px; }
+
+.biz-dark-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.biz-dark-tag-title {
+  font-size: 14px;
+  color: rgba(255,255,255,.55);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.biz-dark-tag {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.75);
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s;
+}
+.biz-dark-tag:hover { background: rgba(255,255,255,.16); }
+
+/* ================================================================
+   数据分析应用
+================================================================ */
+.biz-data-section {
+  padding: 80px 0;
+  background: #fff;
+}
+.biz-data-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+.biz-data-left { flex: 0 0 420px; }
+.biz-data-left h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.biz-data-left .en {
+  font-size: 12px;
+  color: #ccc;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 8px 0 18px;
+}
+.biz-data-left p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.9;
+}
+.biz-data-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.biz-data-card {
+  background: var(--blue);
+  color: #fff;
+  padding: 22px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.biz-data-card:hover { background: var(--blue-d); transform: translateY(-3px); }
+
+/* ================================================================
+   三维数字服务
+================================================================ */
+.biz-3d-section {
+  padding: 80px 0;
+  background: var(--bg-gray);
+}
+.biz-3d-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.biz-3d-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s;
+}
+.biz-3d-card:hover { transform: translateY(-8px); box-shadow: 0 14px 44px rgba(26,94,232,.12); }
+.biz-3d-icon { font-size: 44px; margin-bottom: 16px; }
+.biz-3d-title { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+.biz-3d-desc  { font-size: 13px; color: var(--text-gray); line-height: 1.9; }

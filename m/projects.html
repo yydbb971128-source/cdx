@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>项目案例 — 申洲科技</title>
+  <link rel="stylesheet" href="css/m-projects.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="m-nav">
+  <a href="index.html" class="m-nav-logo"><img src="../images/logo.png" alt="申洲科技" /></a>
+  <span class="m-nav-title">项目案例</span>
+</nav>
+<div class="m-hamburger" id="mHamburger"><span></span><span></span><span></span></div>
+<div class="m-drawer-mask" id="mDrawerMask"></div>
+<div class="m-drawer" id="mDrawer">
+  <a href="index.html" class="m-drawer-item">首页</a>
+  <a href="business.html" class="m-drawer-item">主营业务</a>
+  <a href="projects.html" class="m-drawer-item active">项目案例</a>
+  <a href="news.html" class="m-drawer-item">行业资讯</a>
+  <a href="about.html" class="m-drawer-item">关于我们</a>
+</div>
+
+<!-- 翻页箭头 -->
+<div class="m-arrow" id="mArrow">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+
+<!-- 页码指示器 -->
+<div class="m-dots" id="mDots">
+  <span class="m-dot active"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+  <span class="m-dot"></span>
+</div>
+
+<!-- ══════════ 全屏滑动容器 ══════════ -->
+<div class="m-pages" id="mPages">
+
+  <!-- PAGE 1: Hero -->
+  <section class="m-page mp-hero">
+    <img class="mp-hero-bg" src="../images/bg-project-main.png" alt="" />
+    <div class="mp-hero-content">
+      <h1>项目案例</h1>
+      <p>为全国各级政法机关提供一体化数字解决方案，助力智慧政法建设</p>
+    </div>
+  </section>
+
+  <!-- PAGE 2: 政法委 -->
+  <section class="m-page">
+    <div class="m-page-inner">
+      <div class="mp-sec-header">
+        <div class="mp-sec-title">政法委</div>
+        <div class="mp-sec-en">POLITICAL AND LEGAL COMMITTEE</div>
+      </div>
+      <div class="mp-sec-desc">为各级政法委提供综合信息化平台，整合公检法司数据资源，实现跨部门协同作战。</div>
+      <div class="mp-img-area">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=360&fit=crop&auto=format" alt="政法委" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: 法院 -->
+  <section class="m-page">
+    <div class="m-page-inner">
+      <div class="mp-sec-header">
+        <div class="mp-sec-title">法院</div>
+        <div class="mp-sec-en">COURT</div>
+      </div>
+      <div class="mp-cards-scroll">
+        <a href="proj-detail.html" class="mp-card">
+          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=400&h=260&fit=crop&auto=format" alt="安防系统" loading="lazy" />
+          <span>安防系统</span>
+        </a>
+        <a href="#" class="mp-card">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=260&fit=crop&auto=format" alt="大数据决策分析系统" loading="lazy" />
+          <span>大数据决策分析系统</span>
+        </a>
+        <a href="#" class="mp-card">
+          <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=400&h=260&fit=crop&auto=format" alt="数字化会议" loading="lazy" />
+          <span>数字化会议</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 4: 公安 -->
+  <section class="m-page mp-dark-page">
+    <div class="m-page-inner">
+      <div class="mp-sec-header">
+        <div class="mp-sec-title" style="color:#fff">公安</div>
+        <div class="mp-sec-en" style="color:rgba(255,255,255,.35)">PUBLIC SECURITY</div>
+      </div>
+      <div class="mp-dark-desc">聚合多元公安业务数据，融合视频AI分析、人像识别、车辆管控等智能感知技术，构建立体化社会治安防控体系。</div>
+      <div class="mp-dark-tags">
+        <span>情报研判系统</span><span>视频联网平台</span>
+        <span>人像识别比对</span><span>警务综合指挥</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 5: 司法 -->
+  <section class="m-page">
+    <div class="m-page-inner">
+      <div class="mp-sec-header">
+        <div class="mp-sec-title">司法</div>
+        <div class="mp-sec-en">JUSTICE</div>
+      </div>
+      <div class="mp-sifa-banner">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=400&fit=crop&auto=format" alt="司法" loading="lazy" />
+        <div class="mp-sifa-text">
+          <h3>司法综合智慧环境系统</h3>
+          <p>整合社区矫正、公证服务、法律援助、司法鉴定等业务模块。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 6: 低空经济 -->
+  <section class="m-page mp-dark-page">
+    <div class="m-page-inner" style="justify-content:flex-end;padding-bottom:60px">
+      <h2 class="mp-dijing-h2">低空"智"能量</h2>
+      <p class="mp-dijing-desc">面向低空经济新兴领域，依托无人机、卫星遥感与大数据技术，提供智能巡检、空域管理、低空数字基础设施建设等数字化赋能服务。</p>
+    </div>
+  </section>
+
+  <!-- PAGE 7: Footer -->
+  <section class="m-page mp-footer-page">
+    <footer class="mp-footer">
+      <p class="mp-footer-label">咨询电话</p>
+      <p class="mp-footer-phone">028-85120989</p>
+      <p class="mp-footer-label">公司地址</p>
+      <p class="mp-footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
+      <p class="mp-footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
+    </footer>
+  </section>
+
+</div>
+
+<script>
+document.documentElement.classList.add('fp');
+document.body.classList.add('fp');
+(function(){
+  var pages=document.getElementById('mPages'),
+      dots=document.querySelectorAll('.m-dot'),
+      arrow=document.getElementById('mArrow'),
+      total=dots.length, cur=0;
+
+  function goTo(i){
+    if(i<0||i>=total)return;
+    cur=i;
+    pages.style.transform='translateY(-'+(cur*100)+'vh)';
+    dots.forEach(function(d,idx){d.classList.toggle('active',idx===cur);});
+    arrow.style.opacity=cur===total-1?'0':'1';
+  }
+  arrow.addEventListener('click',function(){goTo(cur+1);});
+
+  var startY=0,moved=false;
+  pages.addEventListener('touchstart',function(e){startY=e.touches[0].clientY;moved=false;},{passive:true});
+  pages.addEventListener('touchmove',function(){moved=true;},{passive:true});
+  pages.addEventListener('touchend',function(e){
+    if(!moved)return;
+    var dy=e.changedTouches[0].clientY-startY;
+    if(Math.abs(dy)>50) goTo(cur+(dy<0?1:-1));
+  });
+  dots.forEach(function(d,i){d.addEventListener('click',function(){goTo(i);});});
+
+  var btn=document.getElementById('mHamburger'),
+      drawer=document.getElementById('mDrawer'),
+      mask=document.getElementById('mDrawerMask');
+  function toggle(){btn.classList.toggle('open');drawer.classList.toggle('open');mask.classList.toggle('open');}
+  btn.addEventListener('click',toggle);
+  mask.addEventListener('click',toggle);
+})();
+</script>
+</body>
+</html>

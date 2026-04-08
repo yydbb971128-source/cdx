@@ -1,0 +1,324 @@
+/* ================================================================
+   移动端 — 主营业务 + 业务详情 共用样式
+================================================================ */
+:root {
+  --blue:      #1a5ee8;
+  --blue-d:    #0d38c0;
+  --text-dark: #0c1830;
+  --text-gray: #666;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'PingFang SC','Microsoft YaHei',sans-serif;
+  color: #333; line-height: 1; background: #fff;
+}
+html.fp, .fp { overflow: hidden; height: 100%; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ================================================================
+   导航（logo + 居中标题 + 汉堡）
+================================================================ */
+.m-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 20px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 1px 8px rgba(0,0,0,.06);
+}
+.m-nav-logo {
+  position: absolute; left: 20px; top: 50%;
+  transform: translateY(-50%);
+}
+.m-nav-logo img { height: 24px; width: auto; }
+.m-nav-title {
+  font-size: 16px; font-weight: 600; color: var(--text-dark);
+}
+
+/* 汉堡 */
+.m-hamburger {
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 5px; width: 24px; height: 24px; cursor: pointer;
+  position: fixed; right: 20px; top: 12px; z-index: 130;
+}
+.m-hamburger span {
+  display: block; width: 100%; height: 2px;
+  background: #444; border-radius: 2px;
+  transition: transform .25s, opacity .25s;
+}
+.m-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.m-hamburger.open span:nth-child(2) { opacity: 0; }
+.m-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* 遮罩 + 抽屉 */
+.m-drawer-mask {
+  position: fixed; inset: 0; background: rgba(0,0,0,.4);
+  z-index: 115; opacity: 0; visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+.m-drawer-mask.open { opacity: 1; visibility: visible; }
+.m-drawer {
+  position: fixed; top: 0; right: -70%; width: 70%; max-width: 280px;
+  height: 100vh; background: #fff; z-index: 120;
+  padding: 72px 0 40px;
+  box-shadow: -4px 0 24px rgba(0,0,0,.1);
+  transition: right .3s cubic-bezier(.22,1,.36,1);
+  overflow-y: auto;
+}
+.m-drawer.open { right: 0; }
+.m-drawer-item {
+  display: block; padding: 16px 28px;
+  font-size: 15px; color: #444;
+  border-bottom: 1px solid #f4f4f4;
+}
+.m-drawer-item.active { color: var(--blue); font-weight: 600; }
+
+/* ================================================================
+   全屏翻页容器
+================================================================ */
+.m-pages {
+  height: 100vh;
+  transition: transform .55s cubic-bezier(.22,1,.36,1);
+  will-change: transform;
+}
+.m-page {
+  height: 100vh; position: relative; overflow: hidden;
+}
+.m-page-inner {
+  padding: 64px 20px 40px; height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+/* 翻页箭头 */
+.m-arrow {
+  position: fixed; bottom: 20px; left: 50%;
+  transform: translateX(-50%); z-index: 90;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  animation: arrowBounce 1.6s ease-in-out infinite;
+  transition: opacity .3s;
+}
+@keyframes arrowBounce {
+  0%,100%{transform:translateX(-50%) translateY(0)}
+  50%{transform:translateX(-50%) translateY(6px)}
+}
+
+/* 页码指示器 */
+.m-dots {
+  position: fixed; right: 8px; top: 50%;
+  transform: translateY(-50%); z-index: 90;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.m-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #ccc; cursor: pointer;
+  transition: background .25s, height .25s, border-radius .25s;
+}
+.m-dot.active {
+  background: var(--blue); height: 18px; border-radius: 3px;
+}
+
+/* ================================================================
+   Hero（主营业务页 — 全屏模式）
+================================================================ */
+.mb-hero-page {
+  display: flex; align-items: flex-end;
+}
+.mb-hero-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+}
+.mb-hero-content {
+  position: relative; z-index: 2;
+  padding: 0 20px 48px; width: 100%;
+}
+.mb-hero-content h1 {
+  font-size: 28px; font-weight: 800; color: var(--text-dark);
+  margin-bottom: 12px;
+}
+.mb-hero-content p {
+  font-size: 13px; color: var(--text-gray); line-height: 1.8;
+}
+
+/* ================================================================
+   通用 Section
+================================================================ */
+.mb-section { padding: 40px 20px; }
+.mb-section-gray { background: #f6f8fc; }
+.mb-sec-header { margin-bottom: 24px; }
+.mb-sec-title {
+  font-size: 22px; font-weight: 700; color: var(--text-dark);
+  line-height: 1.3; margin-bottom: 6px;
+}
+.mb-sec-en {
+  font-size: 10px; color: #c0c8d8;
+  letter-spacing: 3px; text-transform: uppercase;
+}
+
+/* ================================================================
+   系统集成 — 横向滚动卡片（全屏页内）
+================================================================ */
+.mb-item-scroll {
+  display: flex; gap: 14px; flex: 1;
+  overflow-x: auto; align-items: center;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.mb-item-scroll::-webkit-scrollbar { display: none; }
+.mb-item-card {
+  flex: 0 0 85%; max-width: 320px;
+  background: #fff; border-radius: 10px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.06);
+  scroll-snap-align: start;
+}
+
+/* ================================================================
+   系统集成 — 业务条目（详情页纵向）
+================================================================ */
+.mb-item {
+  padding: 28px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mb-item:last-child { border-bottom: none; }
+.mb-item-title {
+  font-size: 18px; font-weight: 700; color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.mb-item-desc {
+  font-size: 13px; color: var(--text-gray); line-height: 1.8;
+  margin-bottom: 14px;
+}
+.mb-item-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue); color: #fff;
+  padding: 8px 18px; border-radius: 4px; font-size: 12px;
+  margin-bottom: 14px;
+}
+.mb-feat-grid {
+  display: flex; flex-wrap: wrap; gap: 8px 20px;
+}
+.mb-feat {
+  font-size: 12px; color: #555;
+  display: flex; align-items: center; gap: 6px;
+}
+.mb-feat::before {
+  content: ''; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--blue); flex-shrink: 0;
+}
+
+/* ================================================================
+   软件平台开发（深色全屏页）
+================================================================ */
+.mb-dark-page {
+  background: #0c1830;
+}
+.mb-dark-h2 {
+  font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 6px;
+}
+.mb-dark-en {
+  font-size: 10px; color: rgba(255,255,255,.35);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
+}
+.mb-dark-label {
+  font-size: 12px; color: rgba(255,255,255,.5);
+  margin-bottom: 14px; letter-spacing: 2px;
+}
+.mb-dark-tags {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.mb-dark-tags span {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.7);
+  padding: 10px 18px; border-radius: 4px; font-size: 13px;
+}
+
+/* Footer 全屏页 */
+.mb-footer-page {
+  display: flex; align-items: center; justify-content: center;
+  background: #0e1928;
+}
+
+/* ================================================================
+   数据分析应用
+================================================================ */
+.mb-data-desc {
+  font-size: 13px; color: var(--text-gray); line-height: 1.8;
+  margin-bottom: 20px;
+}
+.mb-data-cards {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 10px;
+}
+.mb-data-card {
+  background: var(--blue); color: #fff;
+  padding: 16px 12px; border-radius: 8px;
+  font-size: 13px; font-weight: 600; text-align: center;
+}
+
+/* ================================================================
+   三维数字服务
+================================================================ */
+.mb-3d-list { display: flex; flex-direction: column; gap: 16px; }
+.mb-3d-card {
+  background: #fff; border-radius: 10px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.05);
+}
+.mb-3d-icon { font-size: 32px; margin-bottom: 10px; }
+.mb-3d-title {
+  font-size: 16px; font-weight: 700; color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.mb-3d-desc { font-size: 12px; color: var(--text-gray); line-height: 1.8; }
+
+/* ================================================================
+   详情页
+================================================================ */
+.md-main {
+  padding: 64px 20px 40px;
+}
+.md-title {
+  font-size: 24px; font-weight: 700; color: var(--text-dark);
+  margin-bottom: 16px;
+}
+.md-desc {
+  font-size: 13px; color: var(--text-gray); line-height: 1.8;
+  margin-bottom: 20px;
+}
+.md-img {
+  width: 100%; border-radius: 8px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.md-section {
+  margin-bottom: 32px;
+}
+.md-section-title {
+  font-size: 17px; font-weight: 700; color: var(--text-dark);
+  padding-left: 12px; border-left: 3px solid var(--blue);
+  margin-bottom: 14px;
+}
+.md-section-body {
+  font-size: 13px; color: var(--text-gray); line-height: 2;
+}
+.md-section-body p { margin-bottom: 6px; }
+
+/* ================================================================
+   Footer
+================================================================ */
+.mb-footer {
+  background: #0e1928; color: rgba(255,255,255,.5);
+  padding: 32px 20px 24px; text-align: center;
+}
+.mb-footer-label { font-size: 12px; margin-bottom: 4px; }
+.mb-footer-phone {
+  font-size: 18px; font-weight: 700;
+  color: rgba(255,255,255,.85); margin-bottom: 16px;
+}
+.mb-footer-addr { font-size: 12px; margin-bottom: 16px; line-height: 1.6; }
+.mb-footer-copy { font-size: 10px; color: rgba(255,255,255,.25); }

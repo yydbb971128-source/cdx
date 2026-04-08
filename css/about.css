@@ -1,0 +1,57 @@
+/* ================================================================
+   关于我们页
+================================================================ */
+
+.about-hero {
+  height:480px; position:relative; overflow:hidden;
+  display:flex; align-items:flex-end;
+}
+.about-hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.about-hero::after { content:''; position:absolute; inset:0; background:rgba(6,14,40,.55); }
+.about-hero-inner {
+  position:relative; z-index:2;
+  max-width:var(--max-w); margin:0 auto; padding:0 48px 56px; width:100%;
+}
+.about-hero-inner h1 { font-size:44px; font-weight:800; color:#fff; margin-bottom:14px; }
+.about-hero-inner p  { font-size:14px; color:rgba(255,255,255,.8); line-height:1.9; max-width:640px; }
+
+/* 企业文化 */
+.culture-section { padding:88px 0; background:#fff; }
+.culture-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.culture-card {
+  position:relative; height:200px; overflow:hidden; border-radius:8px; cursor:pointer;
+}
+.culture-card img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+.culture-card:hover img { transform:scale(1.07); }
+.culture-card::after { content:''; position:absolute; inset:0; background:rgba(8,20,60,.46); }
+.culture-label {
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  color:#fff;
+}
+.culture-label-cn { font-size:22px; font-weight:700; margin-bottom:6px; }
+.culture-label-en { font-size:12px; letter-spacing:3px; opacity:.75; text-transform:uppercase; }
+
+/* 荣誉资质 */
+.honor-section { padding:88px 0; background:var(--bg-gray); }
+.honor-inner { max-width:var(--max-w); margin:0 auto; padding:0 48px; }
+.honor-img-wrap {
+  background:#fff; border-radius:12px; padding:40px;
+  box-shadow:0 4px 32px rgba(0,0,0,.06);
+  display:flex; justify-content:center;
+}
+.honor-img-wrap img { max-width:760px; width:100%; }
+
+/* 联系我们 */
+.contact-section { padding:88px 0; background:#fff; }
+.contact-inner { max-width:var(--max-w); margin:0 auto; padding:0 48px; }
+.contact-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:52px; }
+.contact-card {
+  background:var(--bg-gray); border-radius:10px; padding:36px 28px;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  transition:transform .32s, box-shadow .32s;
+}
+.contact-card:hover { transform:translateY(-6px); box-shadow:0 12px 40px rgba(20,60,200,.10); }
+.contact-icon { font-size:42px; margin-bottom:16px; }
+.contact-label { font-size:13px; color:var(--text-lt); margin-bottom:8px; }
+.contact-value { font-size:16px; font-weight:700; color:var(--text-dark); }

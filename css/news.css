@@ -1,0 +1,134 @@
+/* ================================================================
+   行业资讯页
+================================================================ */
+
+/* Banner — 导航透明覆盖 */
+.news-banner {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.news-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.news-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 20, 60, .45);
+}
+.news-banner-inner {
+  position: relative;
+  z-index: 2;
+  padding: 0 48px 52px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+}
+.news-banner-inner h1 {
+  font-size: 44px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.news-banner-inner p {
+  font-size: 15px;
+  color: rgba(255,255,255,.8);
+}
+
+/* 资讯 tabs — 居中 */
+.news-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 1px solid #e4e8ef;
+  max-width: var(--max-w);
+  margin: 52px auto 0;
+  padding: 0 48px;
+}
+.news-tab {
+  padding: 14px 36px;
+  font-size: 15px;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: color .2s;
+  border-bottom: 2px solid transparent;
+}
+.news-tab.active {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+  font-weight: 600;
+}
+.news-tab:hover:not(.active) { color: var(--blue); }
+
+/* 新闻列表 */
+.news-panel {
+  display: none;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 40px 48px 80px;
+}
+.news-panel.active { display: block; }
+
+.news-item {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 32px 0;
+}
+.news-item:last-child { border-bottom: none; }
+
+.news-date {
+  flex: 0 0 90px;
+  text-align: center;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 6px;
+  padding: 14px 8px;
+}
+.news-date-day {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.news-date-month {
+  font-size: 12px;
+  opacity: .85;
+}
+
+.news-body { flex: 1; }
+.news-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  transition: color .2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.news-title a {
+  transition: color .2s;
+  flex: 1;
+}
+.news-title a:hover { color: var(--blue); }
+.news-more {
+  font-size: 13px;
+  color: var(--blue);
+  white-space: nowrap;
+}
+.news-excerpt {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.9;
+}

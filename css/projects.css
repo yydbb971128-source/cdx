@@ -1,0 +1,314 @@
+/* ================================================================
+   项目案例页 Hero（全屏背景图）
+================================================================ */
+.proj-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.proj-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.proj-hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.proj-hero h1 {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+.proj-hero p {
+  font-size: 15px;
+  color: var(--text-gray);
+}
+
+/* ================================================================
+   政法委区块
+================================================================ */
+.proj-zhengfa {
+  padding: 80px 0;
+  background: #fff;
+}
+.proj-zhengfa-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+.proj-zhengfa-left { flex: 1; }
+.proj-zhengfa-left h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.proj-zhengfa-left .en {
+  font-size: 12px;
+  color: #ccc;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.proj-zhengfa-left p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.proj-zhengfa-img {
+  flex: 0 0 480px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.proj-zhengfa-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+.proj-zhengfa-img:hover img { transform: scale(1.05); }
+
+/* ================================================================
+   公安 dark 区块
+================================================================ */
+.proj-dark {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.proj-dark img.proj-dark-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.proj-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 12, 30, .76);
+}
+.proj-dark-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.proj-dark-left h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.proj-dark-left .en {
+  font-size: 12px;
+  color: rgba(255,255,255,.35);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.proj-dark-left p {
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.9;
+  max-width: 420px;
+}
+.proj-dark-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.proj-dark-tag {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.7);
+  padding: 10px 28px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s;
+}
+.proj-dark-tag:hover { background: rgba(255,255,255,.14); }
+
+/* ================================================================
+   法院卡片区（图片 + 底部标签叠加）
+================================================================ */
+.proj-cards-section {
+  padding: 80px 0;
+  background: var(--bg-gray);
+}
+.proj-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.proj-card {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,.07);
+  cursor: pointer;
+  transition: transform .36s cubic-bezier(.22,1,.36,1), box-shadow .36s;
+}
+.proj-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 44px rgba(20,60,200,.14);
+}
+.proj-card-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+.proj-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+.proj-card:hover .proj-card-img img { transform: scale(1.08); }
+.proj-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 20px;
+  background: linear-gradient(to top, rgba(4,16,80,.78) 0%, transparent 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* 旧版卡片 body 兼容 */
+.proj-card-body {
+  background: #fff;
+  padding: 22px;
+}
+.proj-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.proj-card-desc {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.8;
+}
+
+/* ================================================================
+   司法大图区
+================================================================ */
+.proj-sifa {
+  padding: 80px 0;
+  background: #fff;
+}
+.proj-sifa-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.proj-sifa-banner {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 340px;
+  position: relative;
+}
+.proj-sifa-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.proj-sifa-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,18,50,.78) 0%, transparent 60%);
+}
+.proj-sifa-text {
+  position: absolute;
+  top: 50%;
+  left: 52px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.proj-sifa-text h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.proj-sifa-text p {
+  font-size: 14px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.8;
+  max-width: 360px;
+}
+
+/* ================================================================
+   低空经济 dark
+================================================================ */
+.proj-dijing {
+  position: relative;
+  height: 460px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.proj-dijing img.proj-dijing-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.proj-dijing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 10, 26, .7);
+}
+.proj-dijing-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 48px 56px;
+  width: 100%;
+}
+.proj-dijing-inner h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.proj-dijing-inner p {
+  font-size: 14px;
+  color: rgba(255,255,255,.72);
+  line-height: 1.9;
+  max-width: 480px;
+}
