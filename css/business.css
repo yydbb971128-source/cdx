@@ -2,7 +2,7 @@
    主营业务页 Hero（全屏背景图）
 ================================================================ */
 .biz-hero {
-  min-height: 100vh;
+  min-height: 600px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -49,8 +49,10 @@
 .biz-list-tabs {
   display: flex;
   gap: 0;
-  border-bottom: 2px solid #eee;
   margin-bottom: 52px;
+  justify-content: center;
+  box-shadow: 0px 23px 23px 1px rgba(41, 69, 126, 0.05);
+  border-radius: 0px 0px 0px 0px;
 }
 .biz-list-tab {
   display: block;
@@ -59,7 +61,7 @@
   color: #666;
   cursor: pointer;
   position: relative;
-  transition: color .2s;
+  transition: color 0.2s;
   white-space: nowrap;
 }
 .biz-list-tab::after {
@@ -71,11 +73,15 @@
   height: 2px;
   background: var(--blue);
   transform: scaleX(0);
-  transition: transform .22s;
+  transition: transform 0.22s;
 }
 .biz-list-tab.active,
-.biz-list-tab:hover { color: var(--blue); }
-.biz-list-tab.active::after { transform: scaleX(1); }
+.biz-list-tab:hover {
+  color: var(--blue);
+}
+.biz-list-tab.active::after {
+  transform: scaleX(1);
+}
 
 /* 每行业务条目（图左文右） */
 .biz-item {
@@ -85,23 +91,28 @@
   padding: 48px 0;
   border-bottom: 1px solid #f0f0f0;
 }
-.biz-item:last-child { border-bottom: none; }
+.biz-item:last-child {
+  border-bottom: none;
+}
 
 .biz-item-img {
   flex: 0 0 44%;
   height: 280px;
-  border-radius: 8px;
   overflow: hidden;
 }
 .biz-item-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
-.biz-item:hover .biz-item-img img { transform: scale(1.05); }
+.biz-item:hover .biz-item-img img {
+  transform: scale(1.05);
+}
 
-.biz-item-body { flex: 1; }
+.biz-item-body {
+  flex: 1;
+}
 
 .biz-item-title {
   font-size: 22px;
@@ -140,11 +151,16 @@
 }
 
 /* 旧版 tag 样式保留兼容 */
-.biz-item-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.biz-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
 .biz-tag {
   font-size: 12px;
   color: var(--blue);
-  border: 1px solid rgba(26,94,232,.25);
+  border: 1px solid rgba(26, 94, 232, 0.25);
   padding: 4px 12px;
   border-radius: 12px;
   background: #f0f5ff;
@@ -171,7 +187,6 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(8, 14, 30, .72);
 }
 .biz-dark-inner {
   position: relative;
@@ -192,14 +207,14 @@
 }
 .biz-dark-left .en {
   font-size: 12px;
-  color: rgba(255,255,255,.4);
+  color: rgba(255, 255, 255, 0.4);
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 .biz-dark-left p {
   font-size: 14px;
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.9;
   max-width: 420px;
   margin-bottom: 24px;
@@ -209,37 +224,90 @@
   align-items: center;
   gap: 8px;
   color: #fff;
-  border: 1px solid rgba(255,255,255,.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 11px 26px;
   border-radius: 3px;
   font-size: 14px;
-  transition: background .22s, gap .2s;
+  transition:
+    background 0.22s,
+    gap 0.2s;
 }
-.biz-dark-btn:hover { background: rgba(255,255,255,.10); gap: 14px; }
+.biz-dark-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  gap: 14px;
+}
 
 .biz-dark-right {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
+.timeline {
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #fff;
+}
+
+.timeline-item {
+  position: relative;
+  text-align: right;
+  padding-right: 15px;
+  padding-bottom: 40px;
+  font-size: 11px;
+  color: #fff;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  right: -6px;
+  right: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+}
+.timeline-item:first-child::before {
+  top: 0;
+}
+.timeline-item:last-child::before {
+  bottom: 0;
+  top: auto;
+}
+.timeline-item:nth-child(n + 2):nth-last-child(n + 2)::before {
+  top: 4%;
+}
+
 .biz-dark-tag-title {
   font-size: 14px;
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 2px;
   margin-bottom: 4px;
 }
 .biz-dark-tag {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
-  color: rgba(255,255,255,.75);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.75);
   padding: 8px 20px;
   border-radius: 4px;
   font-size: 13px;
   text-align: center;
   cursor: pointer;
-  transition: background .2s;
+  transition: background 0.2s;
 }
-.biz-dark-tag:hover { background: rgba(255,255,255,.16); }
+.biz-dark-tag:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
 
 /* ================================================================
    数据分析应用
@@ -256,7 +324,9 @@
   gap: 60px;
   align-items: center;
 }
-.biz-data-left { flex: 0 0 420px; }
+.biz-data-left {
+  flex: 0 0 420px;
+}
 .biz-data-left h2 {
   font-size: 32px;
   font-weight: 700;
@@ -290,9 +360,14 @@
   font-weight: 600;
   text-align: center;
   cursor: pointer;
-  transition: background .2s, transform .2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
-.biz-data-card:hover { background: var(--blue-d); transform: translateY(-3px); }
+.biz-data-card:hover {
+  background: var(--blue-d);
+  transform: translateY(-3px);
+}
 
 /* ================================================================
    三维数字服务
@@ -304,16 +379,35 @@
 .biz-3d-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 10px;
 }
 .biz-3d-card {
   background: #fff;
-  border-radius: 10px;
-  padding: 32px 24px;
-  box-shadow: 0 4px 24px rgba(0,0,0,.06);
-  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s;
+  padding: 32px 24px 10px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s;
+  position: relative;
 }
-.biz-3d-card:hover { transform: translateY(-8px); box-shadow: 0 14px 44px rgba(26,94,232,.12); }
-.biz-3d-icon { font-size: 44px; margin-bottom: 16px; }
-.biz-3d-title { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
-.biz-3d-desc  { font-size: 13px; color: var(--text-gray); line-height: 1.9; }
+.biz-3d-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 44px rgba(26, 94, 232, 0.12);
+}
+.biz-3d-icon {
+  width: 140px;
+  height: 140px;
+  margin-left: auto;
+}
+.biz-3d-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.biz-3d-desc {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.9;
+  margin-top: 30px;
+}

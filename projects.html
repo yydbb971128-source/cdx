@@ -1,152 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="js/device.js"></script>
-  <title>项目案例 — 申洲科技</title>
-  <link rel="stylesheet" href="css/common.css" />
-  <link rel="stylesheet" href="css/projects.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/device.js"></script>
+    <title>项目案例 — 申洲科技</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav nav-transparent" id="mainNav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="申洲科技" /></a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html">首页</a></li>
+          <li class="nav-item">
+            <a href="business.html">主营业务<span class="nav-arrow"></span></a>
+            <div class="dropdown">
+              <a href="business.html#xtjc">系统集成</a>
+              <a href="business.html#rjpt">软件平台开发</a>
+              <a href="business.html#sjfx">数据分析应用</a>
+              <a href="business.html#swsz">三维数字服务</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="active">项目案例<span class="nav-arrow"></span></a>
+            <div class="dropdown">
+              <a href="#zhengfa">政法委</a>
+              <a href="#gongan">公安</a>
+              <a href="#fayuan">法院</a>
+              <a href="#sifa">司法</a>
+              <a href="#dijing">低空平台</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html">关于我们</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<!-- NAV -->
-<nav class="nav nav-transparent" id="mainNav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="申洲科技" /></a>
-    <ul class="nav-menu">
-      <li class="nav-item"><a href="index.html">首页</a></li>
-      <li class="nav-item">
-        <a href="business.html">主营业务<span class="nav-arrow"></span></a>
-        <div class="dropdown">
-          <a href="business.html#xtjc">系统集成</a>
-          <a href="business.html#rjpt">软件平台开发</a>
-          <a href="business.html#sjfx">数据分析应用</a>
-          <a href="business.html#swsz">三维数字服务</a>
+    <!-- ══ HERO（全屏背景图） ══ -->
+    <section class="proj-hero" id="hero">
+      <img class="proj-hero-bg" src="images/bg-project-main.png" alt="" />
+      <div class="proj-hero-inner">
+        <h1 data-sr>项目案例</h1>
+        <p data-sr data-sr-d="2">持续为客户创造价值</p>
+      </div>
+    </section>
+
+    <!-- ══════════ 政法委 ══════════ -->
+    <section class="proj-zhengfa" id="zhengfa">
+      <div class="proj-zhengfa-inner">
+        <div class="proj-zhengfa-left" data-sr>
+          <h2>政法委</h2>
+          <div class="en">Politics and Law Committee</div>
+          <h4>多元纠纷化解平台</h4>
+          <br />
+          <p>
+            通过服务号+小程序，构建多元纠纷化解体系，实时为调解人员和申请人提醒，分为调解申请、<br />指派调解、调解办理、结果反馈、法律法规、法治宣传等。
+          </p>
+          <!-- <a href="proj-detail.html" class="biz-item-btn" style="margin-top: 8px">查看案例 →</a> -->
         </div>
-      </li>
-      <li class="nav-item">
-        <a href="projects.html" class="active">项目案例<span class="nav-arrow"></span></a>
-        <div class="dropdown">
-          <a href="#zhengfa">政法委</a>
-          <a href="#gongan">公安</a>
-          <a href="#fayuan">法院</a>
-          <a href="#sifa">司法</a>
-          <a href="#dijing">低空经济</a>
+        <div class="proj-zhengfa-img" data-sr data-sr-d="2">
+          <img src="images/project-zfw.png" alt="政法委" loading="lazy" />
         </div>
-      </li>
-      <li class="nav-item"><a href="news.html">行业资讯</a></li>
-      <li class="nav-item"><a href="about.html">关于我们</a></li>
-    </ul>
-  </div>
-</nav>
+      </div>
+    </section>
 
-<!-- ══ HERO（全屏背景图） ══ -->
-<section class="proj-hero" id="hero">
-  <img class="proj-hero-bg" src="images/bg-project-main.png" alt="" />
-  <div class="proj-hero-inner">
-    <h1 data-sr>项目案例</h1>
-    <p data-sr data-sr-d="2">为全国各级政法机关提供一体化数字解决方案，助力智慧政法建设</p>
-  </div>
-</section>
-
-<!-- ══════════ 政法委 ══════════ -->
-<section class="proj-zhengfa" id="zhengfa">
-  <div class="proj-zhengfa-inner">
-    <div class="proj-zhengfa-left" data-sr>
-      <h2>政法委</h2>
-      <div class="en">POLITICAL AND LEGAL COMMITTEE</div>
-      <p>为各级政法委提供综合信息化平台，整合公检法司数据资源，实现跨部门协同作战。系统支持社会治安综合治理、矛盾纠纷多元化解、维稳态势感知等核心业务。</p>
-      <a href="proj-detail.html" class="biz-item-btn" style="margin-top:8px">查看案例 →</a>
-    </div>
-    <div class="proj-zhengfa-img" data-sr data-sr-d="2">
-      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop&auto=format" alt="政法委" loading="lazy" />
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ 公安（深色背景） ══════════ -->
-<div class="proj-dark" id="gongan">
-  <img class="proj-dark-bg" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600&h=600&fit=crop&auto=format" alt="公安大数据" loading="lazy" />
-  <div class="proj-dark-inner">
-    <div class="proj-dark-left" data-sr>
-      <h2>公安</h2>
-      <div class="en">PUBLIC SECURITY</div>
-      <p>聚合多元公安业务数据，融合视频AI分析、人像识别、车辆管控等智能感知技术，<br>构建立体化社会治安防控体系，提升公安机关实战效能。</p>
-    </div>
-    <div class="proj-dark-tags" data-sr data-sr-d="2">
-      <div class="proj-dark-tag">情报研判系统</div>
-      <div class="proj-dark-tag">视频联网平台</div>
-      <div class="proj-dark-tag">人像识别比对</div>
-      <div class="proj-dark-tag">警务综合指挥</div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════ 法院（三卡） ══════════ -->
-<section class="proj-cards-section" id="fayuan">
-  <div class="sec-wrap">
-    <div class="sec-center" data-sr>
-      <div class="sec-title">法院</div>
-      <div class="sec-en">COURT</div>
-    </div>
-    <div class="proj-cards">
-      <a href="proj-detail.html" class="proj-card" data-sr data-sr-d="1">
-        <div class="proj-card-img">
-          <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&h=300&fit=crop&auto=format" alt="安防系统" loading="lazy" />
-          <div class="proj-card-label">安防系统</div>
+    <!-- ══════════ 公安（深色背景） ══════════ -->
+    <div class="proj-dark" id="gongan">
+      <img class="proj-dark-bg" src="images/bg-gongan.png" alt="公安大数据" loading="lazy" />
+      <div class="proj-dark-inner">
+        <div class="proj-dark-left" data-sr>
+          <h2>公安</h2>
+          <div class="en">PUBLIC SECURITY</div>
         </div>
-      </a>
-      <a href="#" class="proj-card" data-sr data-sr-d="2">
-        <div class="proj-card-img">
-          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=300&fit=crop&auto=format" alt="大数据决策分析系统" loading="lazy" />
-          <div class="proj-card-label">大数据决策分析系统</div>
+        <div class="timeline">
+          <div class="timeline-item bold">
+            <div class="timeline-item-text">警用无人机作战一体化平台</div>
+          </div>
+          <div class="timeline-item"><div class="timeline-item-text">设备管理</div></div>
+          <div class="timeline-item"><div class="timeline-item-text">态势感知</div></div>
+          <div class="timeline-item"><div class="timeline-item-text">指挥调度</div></div>
+          <div class="timeline-item"><div class="timeline-item-text">实战应用</div></div>
+          <div class="timeline-item"><div class="timeline-item-text">AI 识别</div></div>
+          <div class="timeline-item"><div class="timeline-item-text">培训管理</div></div>
         </div>
-      </a>
-      <a href="#" class="proj-card" data-sr data-sr-d="3">
-        <div class="proj-card-img">
-          <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=600&h=300&fit=crop&auto=format" alt="数字化会议" loading="lazy" />
-          <div class="proj-card-label">数字化会议</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ 司法（大图） ══════════ -->
-<section class="proj-sifa" id="sifa">
-  <div class="sec-wrap">
-    <div class="sec-center" data-sr>
-      <div class="sec-title">司法</div>
-      <div class="sec-en">JUSTICE</div>
-    </div>
-    <div class="proj-sifa-banner" data-sr>
-      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&h=500&fit=crop&auto=format" alt="司法" loading="lazy" />
-      <div class="proj-sifa-text">
-        <h3>司法综合智慧环境系统</h3>
-        <p>整合社区矫正、公证服务、法律援助、司法鉴定等业务模块，构建一体化司法行政综合管理平台，提升司法服务效能。</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ══════════ 低空经济（深色） ══════════ -->
-<div class="proj-dijing" id="dijing">
-  <img class="proj-dijing-bg" src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?w=1600&h=600&fit=crop&auto=format" alt="低空经济" loading="lazy" />
-  <div class="proj-dijing-inner">
-    <h2 data-sr>低空"智"能量</h2>
-    <p data-sr data-sr-d="2">面向低空经济新兴领域，依托无人机、卫星遥感与大数据技术，提供智能巡检、空域管理、低空数字基础设施建设等数字化赋能服务，助力低空产业高质量发展。</p>
-  </div>
-</div>
+    <!-- ══════════ 法院（三卡） ══════════ -->
+    <section class="proj-cards-section" id="fayuan">
+      <div class="sec-wrap">
+        <div class="sec-center" data-sr>
+          <div class="sec-title">法院</div>
+          <div class="sec-en">COURT</div>
+        </div>
+        <div class="proj-cards-container">
+          <div class="proj-cards">
+            <a class="proj-card" data-sr data-sr-d="1">
+              <div class="proj-card-img">
+                <img src="images/proj-cards1.png" alt="法院" loading="lazy" />
+                <div class="proj-card-label">法院</div>
+              </div>
+            </a>
+            <a class="proj-card" data-sr data-sr-d="2">
+              <div class="proj-card-img">
+                <img src="images/proj-cards2.jpg" alt="安防系统" loading="lazy" />
+                <div class="proj-card-label">安防系统</div>
+              </div>
+            </a>
+            <a class="proj-card" data-sr data-sr-d="3">
+              <div class="proj-card-img">
+                <img src="images/proj-cards3.jpg" alt="大数据决策分析系统" loading="lazy" />
+                <div class="proj-card-label">大数据决策分析系统</div>
+              </div>
+            </a>
+            <a class="proj-card" data-sr data-sr-d="3">
+              <div class="proj-card-img">
+                <img src="images/proj-cards4.jpg" alt="智慧警务" loading="lazy" />
+                <div class="proj-card-label">智慧警务</div>
+              </div>
+            </a>
+            <a class="proj-card" data-sr data-sr-d="3">
+              <div class="proj-card-img">
+                <img src="images/proj-cards6.jpg" alt="诉讼全景指挥" loading="lazy" />
+                <div class="proj-card-label">诉讼全景指挥</div>
+              </div>
+            </a>
+            <a class="proj-card" data-sr data-sr-d="3">
+              <div class="proj-card-img">
+                <img src="images/proj-cards7.jpg" alt="数字化会议" loading="lazy" />
+                <div class="proj-card-label">数字化会议</div>
+              </div>
+            </a>
+            <a class="proj-card" data-sr data-sr-d="3">
+              <div class="proj-card-img">
+                <img src="images/proj-cards5.png" alt="智慧诉服" loading="lazy" />
+                <div class="proj-card-label">智慧诉服</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p class="footer-phone-label">咨询电话</p>
-  <p class="footer-phone">028-85120989</p>
-  <p class="footer-addr-label">公司地址</p>
-  <p class="footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
-  <p class="footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
-</footer>
+    <!-- ══════════ 司法（大图） ══════════ -->
+    <section class="proj-sifa" id="sifa">
+      <div class="sec-wrap">
+        <div class="sec-center" data-sr>
+          <div class="sec-title">司法</div>
+          <div class="sec-en">judiciary</div>
+        </div>
+        <div class="proj-sifa-banner" data-sr>
+          <img src="images/project-sifa.png" alt="司法" loading="lazy" />
+          <div class="proj-sifa-text">
+            <h3>行政复议智慧听证系统</h3>
+            <p>数字赋能 智慧司法</p>
+            <p>科技赋能提升案件办理质效，全面推进行政复议体制改革与法治政府建设</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="js/main.js"></script>
-</body>
+    <!-- ══════════ 低空经济（深色） ══════════ -->
+    <div class="proj-dijing" id="dijing">
+      <img class="proj-dijing-bg" src="images/bg-dijing.png" alt="低空经济" loading="lazy" />
+      <div class="proj-dijing-inner">
+        <h2 data-sr>低空"政"能量</h2>
+        <p data-sr data-sr-d="2">Low altitude government affairs</p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-phone-label">咨询电话</p>
+      <p class="footer-phone">028-85120989</p>
+      <p class="footer-addr-label">公司地址</p>
+      <p class="footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
+      <p class="footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

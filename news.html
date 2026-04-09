@@ -1,183 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="js/device.js"></script>
-  <title>行业资讯 — 申洲科技</title>
-  <link rel="stylesheet" href="css/common.css" />
-  <link rel="stylesheet" href="css/news.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/device.js"></script>
+    <title>行业资讯 — 申洲科技</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/news.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav nav-transparent" id="mainNav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="申洲科技" /></a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html">首页</a></li>
+          <li class="nav-item">
+            <a href="business.html">主营业务<span class="nav-arrow"></span></a>
+            <div class="dropdown">
+              <a href="business.html#xtjc">系统集成</a>
+              <a href="business.html#rjpt">软件平台开发</a>
+              <a href="business.html#sjfx">数据分析应用</a>
+              <a href="business.html#swsz">三维数字服务</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html">项目案例<span class="nav-arrow"></span></a>
+            <div class="dropdown">
+              <a href="projects.html#zhengfa">政法委</a>
+              <a href="projects.html#gongan">公安</a>
+              <a href="projects.html#fayuan">法院</a>
+              <a href="projects.html#sifa">司法</a>
+              <a href="projects.html#dijing">低空平台</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html">关于我们</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<!-- NAV -->
-<nav class="nav nav-transparent" id="mainNav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="申洲科技" /></a>
-    <ul class="nav-menu">
-      <li class="nav-item"><a href="index.html">首页</a></li>
-      <li class="nav-item">
-        <a href="business.html">主营业务<span class="nav-arrow"></span></a>
-        <div class="dropdown">
-          <a href="business.html#xtjc">系统集成</a>
-          <a href="business.html#rjpt">软件平台开发</a>
-          <a href="business.html#sjfx">数据分析应用</a>
-          <a href="business.html#swsz">三维数字服务</a>
+    <!-- BANNER -->
+    <div class="news-banner">
+      <img src="images/about-building.png" alt="行业资讯" />
+      <div class="news-banner-inner">
+        <h1 data-sr>行业资讯</h1>
+        <p data-sr data-sr-d="2">了解最新行业资讯，掌握最新行业动态</p>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="news-tabs" data-sr>
+      <div class="news-tab active" data-news="fayuan">法院</div>
+      <div class="news-tab" data-news="sifa">司法</div>
+      <div class="news-tab" data-news="zhengfa">政法委</div>
+    </div>
+
+    <!-- 法院 Panel -->
+    <div class="news-panel active" id="panel-fayuan">
+      <div class="news-item" data-sr>
+        <div class="news-date">
+          <div class="news-date-day">12</div>
+          <div class="news-date-month">11/2019</div>
         </div>
-      </li>
-      <li class="nav-item">
-        <a href="projects.html">项目案例<span class="nav-arrow"></span></a>
-        <div class="dropdown">
-          <a href="projects.html#zhengfa">政法委</a>
-          <a href="projects.html#gongan">公安</a>
-          <a href="projects.html#fayuan">法院</a>
-          <a href="projects.html#sifa">司法</a>
-          <a href="projects.html#dijing">低空经济</a>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="#">利用"互联网+"构建智慧法院</a>
+            <span class="news-more">了解更多 »</span>
+          </div>
+          <p class="news-excerpt">
+            河北省衡水市故城县人民法院在推进司法改革事业过程中，深刻领会建设智慧型法院的重大意义，以人民法院适应信息化为抓手，以满足人民群众的新期望为新要求，切实从推进国家法治建设......
+          </p>
         </div>
-      </li>
-      <li class="nav-item"><a href="news.html" class="active">行业资讯</a></li>
-      <li class="nav-item"><a href="about.html">关于我们</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- BANNER -->
-<div class="news-banner">
-  <img src="images/about-building.png" alt="行业资讯" />
-  <div class="news-banner-inner">
-    <h1 data-sr>行业资讯</h1>
-    <p data-sr data-sr-d="2">了解最新行业资讯，掌握最新行业动态</p>
-  </div>
-</div>
-
-<!-- TABS -->
-<div class="news-tabs" data-sr>
-  <div class="news-tab active" data-news="fayuan">法院</div>
-  <div class="news-tab" data-news="sifa">司法</div>
-  <div class="news-tab" data-news="zhengfa">政法委</div>
-</div>
-
-<!-- 法院 Panel -->
-<div class="news-panel active" id="panel-fayuan">
-
-  <div class="news-item" data-sr>
-    <div class="news-date">
-      <div class="news-date-day">12</div>
-      <div class="news-date-month">11/2019</div>
-    </div>
-    <div class="news-body">
-      <div class="news-title">
-        <a href="#">利用"互联网+"构建智慧法院</a>
-        <span class="news-more">了解更多 »</span>
       </div>
-      <p class="news-excerpt">河北省衡水市故城县人民法院在推进司法改革事业过程中，深刻领会建设智慧型法院的重大意义，以人民法院适应信息化为抓手，以满足人民群众的新期望为新要求，切实从推进国家法治建设......</p>
-    </div>
-  </div>
 
-  <div class="news-item" data-sr data-sr-d="1">
-    <div class="news-date">
-      <div class="news-date-day">27</div>
-      <div class="news-date-month">11/2019</div>
-    </div>
-    <div class="news-body">
-      <div class="news-title">
-        <a href="#">着力加强基层法庭"五化"建设</a>
-        <span class="news-more">了解更多 »</span>
+      <div class="news-item" data-sr data-sr-d="1">
+        <div class="news-date">
+          <div class="news-date-day">27</div>
+          <div class="news-date-month">11/2019</div>
+        </div>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="#">着力加强基层法庭"五化"建设</a>
+            <span class="news-more">了解更多 »</span>
+          </div>
+          <p class="news-excerpt">
+            在平均仅25.3万平方公里的"蜀土盆地"上有着60个基层人民法庭，它们是基层法院的组织机构和对外的重要窗口，是基层组建的重要组成部分，是践行司法为民的前沿阵地，是化解矛盾的第一线......
+          </p>
+        </div>
       </div>
-      <p class="news-excerpt">在平均仅25.3万平方公里的"蜀土盆地"上有着60个基层人民法庭，它们是基层法院的组织机构和对外的重要窗口，是基层组建的重要组成部分，是践行司法为民的前沿阵地，是化解矛盾的第一线......</p>
-    </div>
-  </div>
 
-  <div class="news-item" data-sr data-sr-d="2">
-    <div class="news-date">
-      <div class="news-date-day">27</div>
-      <div class="news-date-month">11/2019</div>
-    </div>
-    <div class="news-body">
-      <div class="news-title">
-        <a href="#">贴心服务基层群众 打造智慧阳光法院</a>
-        <span class="news-more">了解更多 »</span>
+      <div class="news-item" data-sr data-sr-d="2">
+        <div class="news-date">
+          <div class="news-date-day">27</div>
+          <div class="news-date-month">11/2019</div>
+        </div>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="#">贴心服务基层群众 打造智慧阳光法院</a>
+            <span class="news-more">了解更多 »</span>
+          </div>
+          <p class="news-excerpt">
+            网上立案、QQ视频开庭、手机查询诉讼信息等各类司法产品如今在江苏省建城市大丰区人民法院已不是什么新鲜事物，经过几年的实践，大丰法院以"互联网+"思维为引领......
+          </p>
+        </div>
       </div>
-      <p class="news-excerpt">网上立案、QQ视频开庭、手机查询诉讼信息等各类司法产品如今在江苏省建城市大丰区人民法院已不是什么新鲜事物，经过几年的实践，大丰法院以"互联网+"思维为引领......</p>
     </div>
-  </div>
 
-</div>
-
-<!-- 司法 Panel -->
-<div class="news-panel" id="panel-sifa">
-
-  <div class="news-item" data-sr>
-    <div class="news-date">
-      <div class="news-date-day">08</div>
-      <div class="news-date-month">11/2019</div>
-    </div>
-    <div class="news-body">
-      <div class="news-title">
-        <a href="#">推进智慧司法建设，提升司法行政现代化水平</a>
-        <span class="news-more">了解更多 »</span>
+    <!-- 司法 Panel -->
+    <div class="news-panel" id="panel-sifa">
+      <div class="news-item" data-sr>
+        <div class="news-date">
+          <div class="news-date-day">08</div>
+          <div class="news-date-month">11/2019</div>
+        </div>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="#">推进智慧司法建设，提升司法行政现代化水平</a>
+            <span class="news-more">了解更多 »</span>
+          </div>
+          <p class="news-excerpt">
+            各级司法行政机关深入推进信息化建设，积极探索"互联网+司法行政"新模式，不断提升社区矫正、公证、法律援助等业务的信息化水平，有效提升司法行政综合治理效能......
+          </p>
+        </div>
       </div>
-      <p class="news-excerpt">各级司法行政机关深入推进信息化建设，积极探索"互联网+司法行政"新模式，不断提升社区矫正、公证、法律援助等业务的信息化水平，有效提升司法行政综合治理效能......</p>
-    </div>
-  </div>
 
-  <div class="news-item" data-sr data-sr-d="1">
-    <div class="news-date">
-      <div class="news-date-day">15</div>
-      <div class="news-date-month">10/2019</div>
-    </div>
-    <div class="news-body">
-      <div class="news-title">
-        <a href="#">数字化转型助力司法行政工作提质增效</a>
-        <span class="news-more">了解更多 »</span>
+      <div class="news-item" data-sr data-sr-d="1">
+        <div class="news-date">
+          <div class="news-date-day">15</div>
+          <div class="news-date-month">10/2019</div>
+        </div>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="#">数字化转型助力司法行政工作提质增效</a>
+            <span class="news-more">了解更多 »</span>
+          </div>
+          <p class="news-excerpt">
+            通过构建一体化智慧司法平台，实现业务数据的互联互通，打通了司法行政各业务系统之间的信息壁垒，有效提升了跨部门协同效率，为群众提供更加便捷高效的法律服务......
+          </p>
+        </div>
       </div>
-      <p class="news-excerpt">通过构建一体化智慧司法平台，实现业务数据的互联互通，打通了司法行政各业务系统之间的信息壁垒，有效提升了跨部门协同效率，为群众提供更加便捷高效的法律服务......</p>
     </div>
-  </div>
 
-</div>
-
-<!-- 政法委 Panel -->
-<div class="news-panel" id="panel-zhengfa">
-
-  <div class="news-item" data-sr>
-    <div class="news-date">
-      <div class="news-date-day">20</div>
-      <div class="news-date-month">09/2019</div>
-    </div>
-    <div class="news-body">
-      <div class="news-title">
-        <a href="#">深化平安建设，政法委综合信息平台助力社会治理现代化</a>
-        <span class="news-more">了解更多 »</span>
+    <!-- 政法委 Panel -->
+    <div class="news-panel" id="panel-zhengfa">
+      <div class="news-item" data-sr>
+        <div class="news-date">
+          <div class="news-date-day">20</div>
+          <div class="news-date-month">09/2019</div>
+        </div>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="#">深化平安建设，政法委综合信息平台助力社会治理现代化</a>
+            <span class="news-more">了解更多 »</span>
+          </div>
+          <p class="news-excerpt">
+            运用大数据、人工智能等技术手段，整合公安、检察、法院、司法等部门数据资源，构建统一的综合治理信息平台，实现跨部门数据共享与协同联动......
+          </p>
+        </div>
       </div>
-      <p class="news-excerpt">运用大数据、人工智能等技术手段，整合公安、检察、法院、司法等部门数据资源，构建统一的综合治理信息平台，实现跨部门数据共享与协同联动......</p>
-    </div>
-  </div>
 
-  <div class="news-item" data-sr data-sr-d="1">
-    <div class="news-date">
-      <div class="news-date-day">05</div>
-      <div class="news-date-month">08/2019</div>
-    </div>
-    <div class="news-body">
-      <div class="news-title">
-        <a href="#">创新基层治理模式，打造智慧政法新格局</a>
-        <span class="news-more">了解更多 »</span>
+      <div class="news-item" data-sr data-sr-d="1">
+        <div class="news-date">
+          <div class="news-date-day">05</div>
+          <div class="news-date-month">08/2019</div>
+        </div>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="#">创新基层治理模式，打造智慧政法新格局</a>
+            <span class="news-more">了解更多 »</span>
+          </div>
+          <p class="news-excerpt">
+            以"数据赋能、智慧治理"为理念，依托政法委综合信息平台，推动社会综合治理向精细化、智慧化转型，有效提升基层治理体系和治理能力现代化水平......
+          </p>
+        </div>
       </div>
-      <p class="news-excerpt">以"数据赋能、智慧治理"为理念，依托政法委综合信息平台，推动社会综合治理向精细化、智慧化转型，有效提升基层治理体系和治理能力现代化水平......</p>
     </div>
-  </div>
 
-</div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-phone-label">咨询电话</p>
+      <p class="footer-phone">028-85120989</p>
+      <p class="footer-addr-label">公司地址</p>
+      <p class="footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
+      <p class="footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
+    </footer>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p class="footer-phone-label">咨询电话</p>
-  <p class="footer-phone">028-85120989</p>
-  <p class="footer-addr-label">公司地址</p>
-  <p class="footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
-  <p class="footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
-</footer>
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

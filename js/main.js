@@ -21,15 +21,18 @@
 (function () {
   const els = document.querySelectorAll('[data-sr]');
   if (!els.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('sr-visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.10 });
-  els.forEach(el => io.observe(el));
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('sr-visible');
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+  els.forEach((el) => io.observe(el));
 })();
 
 /* ================================================================
@@ -39,25 +42,31 @@
   const secs = document.querySelectorAll('section[id], div[id]');
   const links = document.querySelectorAll('.nav-item > a[data-section]');
   if (!links.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        links.forEach(a => a.classList.toggle('active', a.dataset.section === e.target.id));
-      }
-    });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-  secs.forEach(s => io.observe(s));
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          links.forEach((a) => a.classList.toggle('active', a.dataset.section === e.target.id));
+        }
+      });
+    },
+    { rootMargin: '-30% 0px -60% 0px' },
+  );
+  secs.forEach((s) => io.observe(s));
 })();
 
 /* ================================================================
    平滑滚动锚点
 ================================================================ */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
     if (!id || id === '#') return;
     const target = document.querySelector(id);
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
 
@@ -66,26 +75,28 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 ================================================================ */
 (function () {
   const cards = document.querySelectorAll('.val-card');
-  cards.forEach(c => c.addEventListener('click', () => {
-    cards.forEach(x => x.classList.remove('active'));
-    c.classList.add('active');
-  }));
+  cards.forEach((c) =>
+    c.addEventListener('click', () => {
+      cards.forEach((x) => x.classList.remove('active'));
+      c.classList.add('active');
+    }),
+  );
 })();
 
 /* ================================================================
    通用 Tab 切换（data-tab / data-panel 对应）
 ================================================================ */
 (function () {
-  document.querySelectorAll('[data-tab]').forEach(tab => {
+  document.querySelectorAll('[data-tab]').forEach((tab) => {
     tab.addEventListener('click', () => {
       const group = tab.closest('[data-tab-group]') || tab.parentElement;
       const panelContainer = document.querySelector(tab.dataset.target || '#' + tab.dataset.tab + '-panels');
       // 同组 tab 取消高亮
-      group.querySelectorAll('[data-tab]').forEach(t => t.classList.remove('active'));
+      group.querySelectorAll('[data-tab]').forEach((t) => t.classList.remove('active'));
       tab.classList.add('active');
       // 对应 panel
       if (panelContainer) {
-        panelContainer.querySelectorAll('[data-panel]').forEach(p => p.classList.remove('active'));
+        panelContainer.querySelectorAll('[data-panel]').forEach((p) => p.classList.remove('active'));
         const active = panelContainer.querySelector('[data-panel="' + tab.dataset.tab + '"]');
         if (active) active.classList.add('active');
       }
@@ -99,10 +110,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 (function () {
   const tabs = document.querySelectorAll('.news-tab');
   const panels = document.querySelectorAll('.news-panel');
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
+      tabs.forEach((t) => t.classList.remove('active'));
+      panels.forEach((p) => p.classList.remove('active'));
       tab.classList.add('active');
       const target = document.getElementById('panel-' + tab.dataset.news);
       if (target) target.classList.add('active');
@@ -115,10 +126,34 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 ================================================================ */
 (function () {
   const tabs = document.querySelectorAll('.biz-list-tab');
-  tabs.forEach(tab => {
+  tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
+      tabs.forEach((t) => t.classList.remove('active'));
       tab.classList.add('active');
+    });
+  });
+})();
+
+/* ================================================================
+   项目卡片：点击切换（平滑滚动）
+================================================================ */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.proj-cards-container');
+    const step = 320;
+    container.scrollLeft = 400;
+
+    container.addEventListener('click', function (e) {
+      const rect = container.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const halfWidth = rect.width / 2;
+      if (clickX < halfWidth) {
+        // 点左半边 → 向左滚动一格
+        container.scrollBy({ left: -step, behavior: 'smooth' });
+      } else {
+        // 点右半边 → 向右滚动一格
+        container.scrollBy({ left: step, behavior: 'smooth' });
+      }
     });
   });
 })();
