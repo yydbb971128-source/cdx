@@ -36,26 +36,6 @@
 })();
 
 /* ================================================================
-   导航高亮（滚动时匹配当前 section）
-================================================================ */
-(function () {
-  const secs = document.querySelectorAll('section[id], div[id]');
-  const links = document.querySelectorAll('.nav-item > a[data-section]');
-  if (!links.length) return;
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          links.forEach((a) => a.classList.toggle('active', a.dataset.section === e.target.id));
-        }
-      });
-    },
-    { rootMargin: '-30% 0px -60% 0px' },
-  );
-  secs.forEach((s) => io.observe(s));
-})();
-
-/* ================================================================
    平滑滚动锚点
 ================================================================ */
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -140,6 +120,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.proj-cards-container');
+    if (!container) return;
     const step = 320;
     container.scrollLeft = 400;
 
@@ -156,4 +137,52 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
       }
     });
   });
+})();
+
+/* ================================================================
+   PC 专用：右下角回到顶部（仅视口 ≥992px 时插入 DOM 并监听滚动）
+================================================================ */
+(function () {
+  const mq = window.matchMedia('(min-width: 992px)');
+  let btn = null;
+
+  function onScroll() {
+    if (!btn) return;
+    btn.classList.toggle('is-visible', window.scrollY > 280);
+  }
+
+  function mount() {
+    if (btn) return;
+    btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', '回到顶部');
+    btn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.body.appendChild(btn);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  function unmount() {
+    if (!btn) return;
+    window.removeEventListener('scroll', onScroll);
+    btn.remove();
+    btn = null;
+  }
+
+  function sync() {
+    if (mq.matches) mount();
+    else unmount();
+  }
+
+  if (typeof mq.addEventListener === 'function') {
+    mq.addEventListener('change', sync);
+  } else if (typeof mq.addListener === 'function') {
+    mq.addListener(sync);
+  }
+  sync();
 })();

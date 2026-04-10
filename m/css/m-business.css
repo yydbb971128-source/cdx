@@ -153,12 +153,13 @@ img {
    全屏翻页容器
 ================================================================ */
 .m-pages {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
+  touch-action: none;
 }
 .m-page {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
   overflow: hidden;
 }
@@ -277,7 +278,7 @@ img {
   background: #f6f8fc;
 }
 .mb-sec-header {
-  padding-top: 100px;
+  padding-top: 50px;
   box-sizing: border-box;
 }
 .mb-sec-title {
@@ -307,6 +308,7 @@ img {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-top: 50px;
+  touch-action: pan-x;
 }
 .mb-item-scroll::-webkit-scrollbar {
   display: none;
@@ -336,9 +338,6 @@ img {
   background-image: url('/images/m/wrzs.png');
 }
 .mb-item-card:nth-of-type(5) {
-  background-image: url('/images/m/zsk.png');
-}
-.mb-item-card:nth-of-type(6) {
   background-image: url('/images/m/zhda.png');
 }
 /* ================================================================

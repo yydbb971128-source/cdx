@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="Keywords" content="诉讼服务一体机,申洲科技,成都申洲科技,成都申洲科技有限公司,诉讼服务,智能导诉一体机" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.ico' />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
     <title>申洲科技 — 首页</title>
     <script src="../js/device.js"></script>
     <link rel="stylesheet" href="css/m-index.css" />
@@ -52,7 +52,10 @@
         <img class="m-hero-bg" src="../images/m/hero-banner.png" alt="" />
         <div class="m-hero-content">
           <h1>懂您所需<br />做您所想</h1>
-          <p>让科技助力创意及每一位用户</p>
+          <p>
+            以全栈式科技服务， <br />
+            为创意赋能，为用户创造价值。
+          </p>
         </div>
       </section>
 
@@ -90,9 +93,13 @@
         <div class="m-page-inner">
           <div class="m-sec-header">
             <div class="m-sec-title">持续为客户创造价值</div>
-            <div class="m-sec-en">THE INDUSTRY FIELD</div>
+            <div class="m-sec-en">PROJECT CASE</div>
           </div>
           <div class="m-val-grid">
+            <a href="projects.html#dijing" class="m-val-card">
+              <p class="m-val-title">低空经济</p>
+              <p class="m-val-desc">以数字科技成就<br />最好的低空服务</p>
+            </a>
             <a href="projects.html#gongan" class="m-val-card">
               <p class="m-val-title">公安</p>
               <p class="m-val-desc">深化科技赋能<br />提升新质公安战斗力</p>
@@ -100,10 +107,6 @@
             <a href="projects.html#fayuan" class="m-val-card">
               <p class="m-val-title">法院</p>
               <p class="m-val-desc">提升审判效率<br />强化执行工作<br />优化诉讼服务<br />实现司法管理智能化</p>
-            </a>
-            <a href="projects.html#dijing" class="m-val-card">
-              <p class="m-val-title">低空经济</p>
-              <p class="m-val-desc">以数字科技成就<br />最好的低空服务</p>
             </a>
             <a href="projects.html#sifa" class="m-val-card">
               <p class="m-val-title">司法</p>
@@ -132,7 +135,7 @@
           </div>
           <div class="m-vision-blue">
             <span class="m-vision-wm">VISION</span>
-            <h2>成为国际一流<br />数字化服务商</h2>
+            <h2>成为一流<br />数字化服务商</h2>
             <a href="../about.html" class="m-vision-btn">了解详情 →</a>
           </div>
         </div>
@@ -154,45 +157,169 @@
         var arrow = document.getElementById('mArrow');
         var total = dots.length;
         var cur = 0;
+        var isAnimating = false;
+
+        function setViewportHeightVar() {
+          var vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', vh + 'px');
+        }
+
+        function currentPageOffset() {
+          return -cur * window.innerHeight;
+        }
 
         function goTo(i) {
-          if (i < 0 || i >= total) return;
+          if (i < 0 || i >= total || isAnimating) return;
           cur = i;
-          pages.style.transform = 'translateY(-' + cur * 100 + 'vh)';
+          isAnimating = true;
+          pages.style.transform = 'translate3d(0,' + currentPageOffset() + 'px,0)';
+          dots.forEach(function (d, idx) {
+            d.classList.toggle('active', idx === cur);
+          });
+          arrow.style.opacity = cur === total - 1 ? '0' : '1';
+          window.setTimeout(function () {
+            isAnimating = false;
+          }, 600);
+        }
+
+        function refreshIndicators() {
           dots.forEach(function (d, idx) {
             d.classList.toggle('active', idx === cur);
           });
           arrow.style.opacity = cur === total - 1 ? '0' : '1';
         }
 
+        function resetToFirstPage() {
+          cur = 0;
+          isAnimating = false;
+          pages.style.transition = 'none';
+          syncCurrentPagePosition();
+          refreshIndicators();
+          window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(function () {
+              pages.style.transition = '';
+            });
+          });
+        }
+
         arrow.addEventListener('click', function () {
           goTo(cur + 1);
         });
 
-        var startY = 0,
-          moved = false;
-        pages.addEventListener(
+        var startX = 0;
+        var startY = 0;
+        var deltaX = 0;
+        var deltaY = 0;
+        var moved = false;
+        var lockAxis = '';
+        var ignoreSwipe = false;
+        var startTarget = null;
+        var trackingSwipe = false;
+
+        function hasParent(el, selector, stopAt) {
+          var node = el;
+          while (node && node !== stopAt) {
+            if (node.matches && node.matches(selector)) return true;
+            node = node.parentElement;
+          }
+          return false;
+        }
+
+        function syncCurrentPagePosition() {
+          pages.style.transform = 'translate3d(0,' + currentPageOffset() + 'px,0)';
+        }
+
+        setViewportHeightVar();
+        resetToFirstPage();
+        window.addEventListener('resize', function () {
+          setViewportHeightVar();
+          syncCurrentPagePosition();
+        });
+        window.addEventListener('orientationchange', function () {
+          setViewportHeightVar();
+          syncCurrentPagePosition();
+        });
+        window.addEventListener('pageshow', function () {
+          setViewportHeightVar();
+          resetToFirstPage();
+        });
+
+        document.addEventListener(
           'touchstart',
           function (e) {
+            var target = e.target;
+            if (!pages.contains(target)) {
+              trackingSwipe = false;
+              return;
+            }
+            trackingSwipe = true;
+            startTarget = target;
+            ignoreSwipe = hasParent(target, '.m-drawer,.m-drawer-mask,.m-hamburger', pages);
+            if (ignoreSwipe) return;
+            startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
+            deltaX = 0;
+            deltaY = 0;
             moved = false;
+            lockAxis = '';
           },
-          { passive: true },
+          { passive: true, capture: true },
         );
-        pages.addEventListener(
+        document.addEventListener(
           'touchmove',
           function (e) {
+            if (!trackingSwipe || ignoreSwipe) return;
             moved = true;
+            deltaX = e.touches[0].clientX - startX;
+            deltaY = e.touches[0].clientY - startY;
+
+            if (!lockAxis) {
+              if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) {
+                lockAxis = Math.abs(deltaY) >= Math.abs(deltaX) ? 'y' : 'x';
+              } else {
+                return;
+              }
+            }
+
+            if (lockAxis === 'x') {
+              return;
+            }
+
+            if (hasParent(startTarget, '.m-biz-scroll', pages) && lockAxis === 'x') {
+              return;
+            }
+
+            e.preventDefault();
           },
-          { passive: true },
+          { passive: false, capture: true },
         );
-        pages.addEventListener('touchend', function (e) {
-          if (!moved) return;
-          var dy = e.changedTouches[0].clientY - startY;
-          if (Math.abs(dy) > 50) {
-            goTo(cur + (dy < 0 ? 1 : -1));
-          }
-        });
+        document.addEventListener(
+          'touchend',
+          function (e) {
+            if (!trackingSwipe || ignoreSwipe) return;
+            trackingSwipe = false;
+            var endX = e.changedTouches[0].clientX;
+            var dy = e.changedTouches[0].clientY - startY;
+            var dx = endX - startX;
+            var absX = Math.abs(dx);
+            var absY = Math.abs(dy);
+
+            if (absY < 35 || absY < absX) return;
+            if (hasParent(startTarget, '.m-biz-scroll', pages) && absX > absY) return;
+
+            if (Math.abs(dy) > 45) {
+              goTo(cur + (dy < 0 ? 1 : -1));
+            }
+          },
+          { passive: true, capture: true },
+        );
+        document.addEventListener(
+          'touchcancel',
+          function () {
+            trackingSwipe = false;
+          },
+          { passive: true, capture: true },
+        );
 
         dots.forEach(function (d, i) {
           d.addEventListener('click', function () {
