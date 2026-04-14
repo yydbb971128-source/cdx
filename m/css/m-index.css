@@ -235,6 +235,9 @@ img {
   line-height: 1.4;
   margin-bottom: 6px;
 }
+.w220 {
+  width: 220px;
+}
 .m-sec-en {
   font-size: 16px;
   color: #c0c8d8;

@@ -12,7 +12,7 @@
 <!-- NAV -->
 <nav class="m-nav">
   <a href="index.html" class="m-nav-logo"><img src="../images/logo.png" alt="申洲科技" /></a>
-  <span class="m-nav-title">主营业务</span>
+  <span class="m-nav-title"></span>
 </nav>
 <div class="m-hamburger" id="mHamburger"><span></span><span></span><span></span></div>
 <div class="m-drawer-mask" id="mDrawerMask"></div>
@@ -25,8 +25,8 @@
 
 <!-- 详情内容 -->
 <main class="md-main">
-  <h1 class="md-title">智慧机房</h1>
-  <p class="md-desc">智慧机房是指具有自动监测、远程运维、自主预警、数据管理等功能的机房。</p>
+  <h1 class="md-title"></h1>
+  <p class="md-desc"></p>
 
   <img class="md-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=420&fit=crop&auto=format" alt="智慧机房" loading="lazy" />
 
@@ -64,22 +64,17 @@
 
 <!-- FOOTER -->
 <footer class="mb-footer">
-  <p class="mb-footer-label">咨询电话</p>
-  <p class="mb-footer-phone">028-85120989</p>
-  <p class="mb-footer-label">公司地址</p>
-  <p class="mb-footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
-  <p class="mb-footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
+  <p class="mb-footer-label"></p>
+  <p class="mb-footer-phone"></p>
+  <p class="mb-footer-label"></p>
+  <p class="mb-footer-addr"></p>
+  <p class="mb-footer-copy copy_right"></p>
 </footer>
 
-<script>
-(function(){
-  var btn=document.getElementById('mHamburger'),
-      drawer=document.getElementById('mDrawer'),
-      mask=document.getElementById('mDrawerMask');
-  function toggle(){btn.classList.toggle('open');drawer.classList.toggle('open');mask.classList.toggle('open');}
-  btn.addEventListener('click',toggle);
-  mask.addEventListener('click',toggle);
-})();
-</script>
+<script src="../js/m-common.js"></script>
+<script src="../js/m-shell.js"></script>
+<script src="/js/copyRight.js"></script>
+<script src="../js/copy-content.js"></script>
+<script src="../js/copy-render.js"></script>
 </body>
 </html>

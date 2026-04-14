@@ -66,6 +66,7 @@
   text-transform: uppercase;
 }
 .proj-zhengfa-left p {
+  width: 66%;
   font-size: 14px;
   color: var(--text-gray);
   line-height: 1.9;

@@ -12,7 +12,7 @@
 <!-- NAV -->
 <nav class="m-nav">
   <a href="index.html" class="m-nav-logo"><img src="../images/logo.png" alt="申洲科技" /></a>
-  <span class="m-nav-title">行业资讯</span>
+  <span class="m-nav-title"></span>
 </nav>
 <div class="m-hamburger" id="mHamburger"><span></span><span></span><span></span></div>
 <div class="m-drawer-mask" id="mDrawerMask"></div>
@@ -31,9 +31,9 @@
 
 <!-- Tabs -->
 <div class="mn-tabs">
-  <div class="mn-tab active" data-news="fayuan">法院</div>
-  <div class="mn-tab" data-news="sifa">司法</div>
-  <div class="mn-tab" data-news="zhengfa">政法委</div>
+  <div class="mn-tab active" data-news="fayuan"></div>
+  <div class="mn-tab" data-news="sifa"></div>
+  <div class="mn-tab" data-news="zhengfa"></div>
 </div>
 
 <!-- 法院 -->
@@ -113,36 +113,17 @@
 
 <!-- Footer -->
 <footer class="mn-footer">
-  <p class="mn-footer-label">咨询电话</p>
-  <p class="mn-footer-phone">028-85120989</p>
-  <p class="mn-footer-label">公司地址</p>
-  <p class="mn-footer-addr">成都市高新区吉庆三路333号蜀都中心2期1栋</p>
-  <p class="mn-footer-copy">©2019成都申洲科技有限责任公司 版权所有</p>
+  <p class="mn-footer-label"></p>
+  <p class="mn-footer-phone"></p>
+  <p class="mn-footer-label"></p>
+  <p class="mn-footer-addr"></p>
+  <p class="mn-footer-copy copy_right"></p>
 </footer>
 
-<script>
-(function(){
-  // 汉堡菜单
-  var btn=document.getElementById('mHamburger'),
-      drawer=document.getElementById('mDrawer'),
-      mask=document.getElementById('mDrawerMask');
-  function toggle(){btn.classList.toggle('open');drawer.classList.toggle('open');mask.classList.toggle('open');}
-  btn.addEventListener('click',toggle);
-  mask.addEventListener('click',toggle);
-
-  // Tab 切换
-  var tabs=document.querySelectorAll('.mn-tab'),
-      panels=document.querySelectorAll('.mn-panel');
-  tabs.forEach(function(tab){
-    tab.addEventListener('click',function(){
-      tabs.forEach(function(t){t.classList.remove('active');});
-      panels.forEach(function(p){p.classList.remove('active');});
-      tab.classList.add('active');
-      var target=document.getElementById('panel-'+tab.dataset.news);
-      if(target) target.classList.add('active');
-    });
-  });
-})();
-</script>
+<script src="../js/m-common.js"></script>
+<script src="../js/m-news.js"></script>
+<script src="/js/copyRight.js"></script>
+<script src="../js/copy-content.js"></script>
+<script src="../js/copy-render.js"></script>
 </body>
 </html>
