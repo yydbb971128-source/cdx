@@ -446,6 +446,7 @@ img {
   font-size: 12px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
 }
 .mp-dijing-line {
   width: 100%;
